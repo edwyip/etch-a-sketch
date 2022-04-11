@@ -22,10 +22,6 @@ body{
     flex: 1;
 }
 
-.hover{
-    background-color: #999999;
-}
-
 #new-grid{
     margin:10px;
 }

@@ -1,6 +1,3 @@
-function toggleHover(e){
-    e.addEventListener("mouseover", ()=>e.classList.add("hover"));
-}
 function generateGrid(num){
     for (let i=0;i<num;i++){
         let row = document.createElement("div");
@@ -42,11 +39,12 @@ function darkenColor(rgbColor){
 
 function newSketch(){
     gridNumber = prompt("How many squares per side? Max:100")
-    while (container.firstChild){
-        container.removeChild(container.firstChild)
+    if (gridNumber > 100) alert("Your input exceeded maximum number of squares.")
+    else if (isNaN(+gridNumber)) alert("Input a number")
+    else {
+        while (container.firstChild) container.removeChild(container.firstChild)
+        generateGrid(gridNumber)
     }
-    if (gridNumber > 100 || typeof(+gridNumber) !== "number") alert("Invalid Input!")
-    else generateGrid(gridNumber)
 }
 
 const container = document.querySelector("#flex-container");
