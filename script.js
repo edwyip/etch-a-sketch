@@ -22,9 +22,7 @@ function addHoverColor(square){
         square.style.cssText = ("background-color: rgb(" + color.join() + ")");
     }, {once: true})
     square.addEventListener("mouseover", ()=>{
-        console.log(square.style.backgroundColor)
         square.style.backgroundColor = darkenColor(square.style.backgroundColor)
-        console.log(square.style.backgroundColor)
     })
 }
 
